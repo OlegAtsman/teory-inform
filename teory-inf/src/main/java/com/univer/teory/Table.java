@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 public class Table {
 
 	private Map<Character, Integer> freqTable = new HashMap<Character, Integer>();
-	private Map<Character, String> codeTable = new HashMap<Character, String>();
+	
 	private List<Node> probList = new ArrayList<Node>();
 
 	public Table(String source) {
@@ -56,20 +56,12 @@ public class Table {
 	
 	/* GETERS AND SETTERS */
 
-	public Map<Character, String> getCodeTable() {
-		return codeTable;
-	}
-
 	public Map<Character, Integer> getFreqTable() {
 		return freqTable;
 	}
 
 	public List<Node> getProbList() {
 		return probList;
-	}
-	
-	public void setCodeTable(Map<Character, String> codeTable) {
-		this.codeTable = codeTable;
 	}
 
 	public void setFreqTable(Map<Character, Integer> freqTable) {

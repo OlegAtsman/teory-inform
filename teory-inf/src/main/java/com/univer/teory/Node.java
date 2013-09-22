@@ -14,6 +14,10 @@ public class Node implements Comparable<Node> {
 		this.prob = prob;
 	}
 	
+	public int getFreq() {
+		return freq;
+	}
+	
 	public double getProb() {
 		return prob;
 	}
