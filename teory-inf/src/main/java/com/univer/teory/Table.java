@@ -41,7 +41,7 @@ public class Table {
 
 			Double prob = freq.doubleValue() / source.length();
 
-			probList.add(new Node(ch, freq, prob));
+			probList.add(new Node(ch.toString(), freq, prob));
 		}
 
 		sortProbList();
