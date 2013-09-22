@@ -18,7 +18,7 @@ public class Table {
 		buildFreqTable(source);
 		buildProbList(source);
 	}
-
+	
 	private void buildFreqTable(String source) {
 		for (char ch : source.toCharArray()) {
 			if (!freqTable.containsKey(ch)) {
@@ -32,8 +32,7 @@ public class Table {
 	}
 
 	private void buildProbList(String source) {
-		Iterator<Entry<Character, Integer>> it = freqTable.entrySet()
-				.iterator();
+		Iterator<Entry<Character, Integer>> it = freqTable.entrySet().iterator();
 		while (it.hasNext()) {
 			Entry current = it.next();
 			Character ch = (Character) current.getKey();
@@ -43,18 +42,18 @@ public class Table {
 
 			probList.add(new Node(ch, freq, prob));
 		}
-
+		
 		sortProbList();
 	}
-
+	
 	public void sortProbList() {
-		if (probList != null) {
+		if(probList!=null) {
 			Collections.sort(probList);
-		} else {
+		}else {
 			System.out.println("Table, probList is null");
 		}
 	}
-
+	
 	/* GETERS AND SETTERS */
 
 	public Map<Character, String> getCodeTable() {
@@ -68,7 +67,7 @@ public class Table {
 	public List<Node> getProbList() {
 		return probList;
 	}
-
+	
 	public void setCodeTable(Map<Character, String> codeTable) {
 		this.codeTable = codeTable;
 	}
@@ -76,9 +75,10 @@ public class Table {
 	public void setFreqTable(Map<Character, Integer> freqTable) {
 		this.freqTable = freqTable;
 	}
-
+	
 	public void setProbList(List<Node> probList) {
 		this.probList = probList;
 	}
 
+	
 }
