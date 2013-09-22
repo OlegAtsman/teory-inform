@@ -1,1 +1,1 @@
-Test test text
+I read about sorting ArrayLists using a Comparator but in all of the examples people used compareTo which according to some research is a method for Strings.
