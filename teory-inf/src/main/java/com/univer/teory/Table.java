@@ -15,8 +15,8 @@ public class Table {
 			}else {
 				Integer fq = table.get(ch);
 				table.remove(ch);
-				table.put(ch, fq++);
-			}		
+				table.put(ch, fq + 1);
+			}		table.
 		}
 	}
 }
