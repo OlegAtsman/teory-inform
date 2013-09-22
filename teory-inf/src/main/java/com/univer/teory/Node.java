@@ -3,11 +3,11 @@ package com.univer.teory;
 
 public class Node implements Comparable<Node> {
 	
-	private char symbol;
+	private String symbol;
 	private int freq;
 	private double prob;
 	
-	public Node(char symbol, int freq, double prob) {
+	public Node(String symbol, int freq, double prob) {
 		super();
 		this.symbol = symbol;
 		this.freq = freq;
@@ -22,7 +22,7 @@ public class Node implements Comparable<Node> {
 		return that.freq - this.freq;
 	}
 	
-	public char getSymbol() {
+	public String getSymbol() {
 		return symbol;
 	}
 }
