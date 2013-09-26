@@ -1,1 +1,4 @@
-I read about sorting ArrayLists using a Comparator but in all of the examples people used compareTo which according to some research is a method for Strings.
+Unlike the .html() method, .text() can be used in both XML and HTML documents. 
+The result of the .text() method is a string containing the combined text of all matched elements. 
+(Due to variations in the HTML parsers in different browsers, the text returned may vary in newlines and other white space.) 
+Consider the following HTML:

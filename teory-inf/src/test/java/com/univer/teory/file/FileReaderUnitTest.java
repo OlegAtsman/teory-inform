@@ -11,7 +11,7 @@ public class FileReaderUnitTest extends Assert {
 	
 	@Test
 	public void testWriteToFile() throws IOException {
-		fr.writeToFile("testFile.txt", "Test test text");
+		fr.writeToFile("unittest.txt", "Test test text");
 	}
 	
 	@Test
