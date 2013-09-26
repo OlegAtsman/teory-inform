@@ -1,6 +1,9 @@
-package com.univer.teory;
+package com.univer.teory.haffman.parts;
 
-
+/**
+ * Node - created for all characters in source file.
+ * It contains character, probability, frequency.
+ */
 public class Node implements Comparable<Node> {
 	
 	private String symbol;

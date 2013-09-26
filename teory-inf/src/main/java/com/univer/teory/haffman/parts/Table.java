@@ -1,4 +1,4 @@
-package com.univer.teory;
+package com.univer.teory.haffman.parts;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/**
+ *	Table, class work with source text. 
+ *	Build frequency table, probability list and etc.
+ */
 public class Table {
 
 	private Map<Character, Integer> freqTable = new HashMap<Character, Integer>();
@@ -19,7 +23,7 @@ public class Table {
 		buildProbList(source);
 	}
 	
-	private void buildFreqTable(String source) {
+	private Map<Character, Integer> buildFreqTable(String source) {
 		for (char ch : source.toCharArray()) {
 			if (!freqTable.containsKey(ch)) {
 				freqTable.put(ch, 1);
@@ -29,9 +33,16 @@ public class Table {
 				freqTable.put(ch, fq + 1);
 			}
 		}
+		return freqTable;
 	}
 
-	private void buildProbList(String source) {
+	/**
+	 * Builds probability list of @see Node.
+	 * After build, method sort list.
+	 * @param source
+	 * @return
+	 */
+	private List<Node> buildProbList(String source) {
 		Iterator<Entry<Character, Integer>> it = freqTable.entrySet().iterator();
 		while (it.hasNext()) {
 			Entry current = it.next();
@@ -42,8 +53,8 @@ public class Table {
 
 			probList.add(new Node(ch.toString(), freq, prob));
 		}
-		
 		sortProbList();
+		return probList;
 	}
 	
 	public void sortProbList() {

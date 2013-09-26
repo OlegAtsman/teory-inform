@@ -1,8 +1,11 @@
-package com.univer.teory;
+package com.univer.teory.haffman;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.univer.teory.haffman.parts.Node;
+import com.univer.teory.haffman.parts.Table;
 
 public class Haffman {
 

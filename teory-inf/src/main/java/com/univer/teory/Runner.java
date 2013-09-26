@@ -1,6 +1,7 @@
 package com.univer.teory;
 
 import com.univer.teory.file.FileReader;
+import com.univer.teory.haffman.Haffman;
 
 public class Runner {
 	
