@@ -16,7 +16,7 @@ public class FileReader {
 		try {
 			FileInputStream inputStream = new FileInputStream(fileName);
 			String fileString = IOUtils.toString(inputStream);
-			
+
 			return fileString;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -1,8 +1,10 @@
 package com.univer.teory.haffman;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.univer.teory.haffman.parts.Node;
 import com.univer.teory.haffman.parts.Table;
@@ -16,8 +18,8 @@ public class Haffman {
 	private static String PRELAST_CODE = "1";
 	private static String LAST_CODE = "0";
 
-	public Haffman(String source) {
-		table = new Table(source);
+	public Haffman(Table table) {
+		this.table = table;
 	}
 
 	public void buildCodeTable() {
@@ -41,7 +43,6 @@ public class Haffman {
 			
 			table.sortProbList();
 		}
-
 	}
 
 	public void codeNode(Node node, String symbol) {
@@ -53,9 +54,26 @@ public class Haffman {
 			} else {
 				String code = codeTable.get(ch);
 				codeTable.remove(ch);
-				codeTable.put(ch, code + symbol);
+				codeTable.put(ch, symbol+code);
 			}
 		}
-		System.out.println(codeTable);
+		Iterator<Entry<Character, String>> it = codeTable.entrySet().iterator();
+		
+		
+		/*codeTable = new HashMap<Character, String>();
+		while(it.hasNext()) {
+			Entry e = it.next();
+			String value = (String) e.getValue();
+			value = new StringBuilder(value).reverse().toString();
+			codeTable.put((Character) e.getKey(), value);
+		}*/
+	}
+	
+	public Map<Character, String> getCodeTable() {
+		return codeTable;
+	}
+	
+	public Table getTable() {
+		return table;
 	}
 }

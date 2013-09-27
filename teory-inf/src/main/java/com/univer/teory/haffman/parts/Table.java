@@ -18,6 +18,10 @@ public class Table {
 	
 	private List<Node> probList = new ArrayList<Node>();
 
+	public Table() {
+		
+	}
+	
 	public Table(String source) {
 		buildFreqTable(source);
 		buildProbList(source);
