@@ -1,11 +1,6 @@
 package com.univer.teory.haffman;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class Compressor {
 	
@@ -15,10 +10,11 @@ public class Compressor {
 		for (char ch: sourceChar) {
 			stringBuilder.append(codeTable.get(ch));
 		}
-		System.out.println(stringBuilder.toString());
-		String code = eightBit(stringBuilder.toString());
-		System.out.println(code);
-		return code;
+		
+		String sourceBinCode = stringBuilder.toString();
+		String compressedSource = eightBit(sourceBinCode);
+		
+		return compressedSource;
 	}
 	
 	public String decompress(String compressedSource, Map<String, String> codeTable, Integer lastAddedZero) {
