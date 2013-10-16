@@ -4,8 +4,8 @@ public class Runner2 {
 	
 	public static void main(String[] args) {
 		HaffmanService hs = new HaffmanService();
-		hs.compressFile("text");
-		hs.decompressFile("text.haffman");
+		hs.compress("text");
+		hs.decompress("text.haffman");
 	}
 	
 }

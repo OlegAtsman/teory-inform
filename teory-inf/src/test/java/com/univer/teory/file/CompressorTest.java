@@ -2,7 +2,7 @@ package com.univer.teory.file;
 
 import org.junit.Assert;
 import org.junit.Test;
-
+import com.univer.teory.HaffmanService;
 import com.univer.teory.haffman.Compressor;
 
 public class CompressorTest extends Assert {
@@ -17,5 +17,14 @@ public class CompressorTest extends Assert {
 		
 		assertEquals("1010101011111111111101010101011101110110110010110100000000", from);
 	}
-
+	
+	@Test
+	public void mainTest() {
+		HaffmanService haffmanService = new HaffmanService();
+		String source = "aaabbbbcccccdddddd";
+		String compressedSource = haffmanService.compress(source);
+		String decompressedSource = haffmanService.decompress(compressedSource);
+		
+		assertEquals(source, decompressedSource);
+	}
 }

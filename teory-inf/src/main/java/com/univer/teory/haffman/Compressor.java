@@ -24,24 +24,18 @@ public class Compressor {
 	public String decompress(String compressedSource, Map<String, String> codeTable, Integer lastAddedZero) {
 		String binCode = bitEight(compressedSource, lastAddedZero);
 		System.out.println(binCode);
-		List<Entry<String, String>> sortedList = new ArrayList<Entry<String, String>>();
 		
-		for(Entry<String, String> entry: codeTable.entrySet()) {
-			sortedList.add(entry);
-		}
+		String buff = "";
+		StringBuilder sb = new StringBuilder();
 		
-		Comparator<Entry<String, String>> comparator = new Comparator<Entry<String, String>>() {
-			public int compare(Entry<String, String> o1, Entry<String, String> o2) {
-				return o2.getValue().length() - o1.getValue().length();
+		for(Character ch: binCode.toCharArray()) {
+			buff += ch.toString();
+			if(codeTable.containsKey(buff)) {
+				sb.append(codeTable.get(buff));
+				buff = "";
 			}
-		};
-		
-		Collections.sort(sortedList, comparator);
-		
-		for(Entry<String, String> entry: sortedList) {
-			binCode = binCode.replaceAll(entry.getValue(), entry.getKey());
 		}
-		return binCode;
+		return sb.toString();
 	}
 	
 	public String bitEight(String compressedSource, Integer lastAddedZero) {
