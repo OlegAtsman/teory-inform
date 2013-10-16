@@ -1,41 +1,35 @@
 package com.univer.teory;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
-import com.univer.teory.file.FileReader;
+import com.univer.teory.file.FileService;
 import com.univer.teory.haffman.Haffman;
 import com.univer.teory.haffman.parts.Node;
 import com.univer.teory.haffman.parts.Table;
 
 public class Runner {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
-		FileReader fr = new FileReader();
+		FileService fr = new FileService();
 		String source = fr.readFromFile("testFile.txt");
 		Table table = new Table();
-		List<Node> pro = new ArrayList<Node>();
-		pro.add(new Node("a", 27, 27 / 64));
-		pro.add(new Node("b", 9, 9/64));
-		pro.add(new Node("c", 9, 9/64));
-		pro.add(new Node("d", 9, 9/64));
-		pro.add(new Node("f", 3, 3/64));
-		pro.add(new Node("h", 3, 3/64));
-		pro.add(new Node("j", 3, 3/64));
-		pro.add(new Node("k", 1, 1/64));
-		table.setProbList(pro);
+		
+		List<Node> probList = table.buildProbList(source);
 
 		System.out.println("----------------------NODES----------------------");
-		for (Node node : table.getProbList()) {
+		for (Node node : probList) {
 			System.out.println("Node: " + node.getSymbol() + " " + " prob: " + node.getProb() + " freq: " + node.getFreq());
 		}
 
-		Haffman haffman = new Haffman(table);
-		haffman.buildCodeTable();
+		Haffman haffman = new Haffman();
+		Map<Character, String> codeTable = haffman.buildCodeTable(probList);
 
 		System.out.println("------------------ENDS OF NODES----------------------");
-		System.out.println(haffman.getCodeTable());
+		System.out.println(codeTable);
+
 	}
 
 }

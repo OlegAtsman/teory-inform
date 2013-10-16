@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class FileReaderUnitTest extends Assert {
 	
-	private FileReader fr = new FileReader();
+	private FileService fr = new FileService();
 	
 	@Test
 	public void testWriteToFile() throws IOException {

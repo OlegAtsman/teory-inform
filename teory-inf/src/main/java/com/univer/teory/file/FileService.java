@@ -9,20 +9,13 @@ import java.io.PrintWriter;
 
 import org.apache.commons.io.IOUtils;
 
+public class FileService {
 
-public class FileReader {
+	public String readFromFile(String fileName) throws IOException {
+		FileInputStream inputStream = new FileInputStream(fileName);
+		String fileString = IOUtils.toString(inputStream);
 
-	public String readFromFile(String fileName) {
-		try {
-			FileInputStream inputStream = new FileInputStream(fileName);
-			String fileString = IOUtils.toString(inputStream);
-
-			return fileString;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		return fileString;
 	}
 
 	public void writeToFile(String fileName, String data) throws IOException {
