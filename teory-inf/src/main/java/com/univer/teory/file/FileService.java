@@ -24,7 +24,6 @@ public class FileService {
 		try {
 			out.print(data);
 		} finally {
-			out.flush();
 			out.close();
 		}
 	}

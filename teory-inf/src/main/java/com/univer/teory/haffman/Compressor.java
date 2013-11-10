@@ -67,5 +67,4 @@ public class Compressor {
 		sb.append(count);//write the last how many 0 we added.
 		return sb.toString();
 	}
-	
 }

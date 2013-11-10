@@ -23,8 +23,10 @@ public class HaffmanService {
 		Table table = new Table();
 
 		List<Node> probList = table.buildProbList(source);
+		for(Node node: probList) {
+			System.out.println(node.getSymbol() + ":" + node.getProb() + ":" + node.getFreq());
+		}
 		Map<Character, String> codeTable = haffman.buildCodeTable(probList);
-
 		String code = compressor.compress(source, codeTable);
 		StringBuilder sb = new StringBuilder();
 		sb.append(gson.toJson(MapConverter.convertCodeTableToIntStr(codeTable)));
