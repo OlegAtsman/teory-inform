@@ -1,6 +1,10 @@
 package com.univer.teoryinform.randomnumbers.randoms.lcm
 
-LKM lkm = new LKM();
+import com.univer.teoryinform.randomnumbers.randoms.LKM
+import com.univer.teoryinform.randomnumbers.randoms.QCM
+import com.univer.teoryinform.randomnumbers.tests.MonobitTest
+
+QCM lkm = new QCM();
 
 def genBitSeq(fname) {
 	LKM lkm = new LKM();
@@ -14,7 +18,7 @@ def genBitSeq(fname) {
 
 genBitSeq('massive.txt');
 
-RandomTest rt =  new RandomTest()
+MonobitTest rt =  new MonobitTest()
 def res = rt.monobit('massive.txt', 3.8415);
 
 println("Rans test. Monobit is " + res.res);

@@ -1,4 +1,4 @@
-package com.univer.teoryinform.randomnumbers.randoms.lcm
+package com.univer.teoryinform.randomnumbers.randoms
 
 class LKM {
 	int x = 0;
