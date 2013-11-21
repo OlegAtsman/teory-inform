@@ -2,7 +2,7 @@ package com.random.tests
 
 class MonobitTest extends AbstractTest {
 	
-	def readBitSeq(fname) {
+	def analyzeFile(fname) {
 		def resMap = [
 			'n0' : 0,
 			'n1' : 0,
@@ -19,7 +19,7 @@ class MonobitTest extends AbstractTest {
 	}
 	
 	def test(fname, alef) {
-		def paramMap = readBitSeq(fname);
+		def paramMap = analyzeFile(fname);
 		def n0 = BITS*paramMap['sequenceLength'] - paramMap['n1'];
 		def x1 = (n0 - paramMap['n1'])*(n0 - paramMap['n1'])/(8.0*paramMap['sequenceLength']);
 		

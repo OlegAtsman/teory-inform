@@ -21,7 +21,7 @@ abstract class AbstractUnitTest {
 		def AbstractTest monobitTest = new MonobitTest();
 		def className = random.getMetaClass().getTheClass().getName();
 		def fileName = className+"_monobit_test.txt";
-		monobitTest.genBitSeq(random, fileName);
+		monobitTest.generateAndWriteToFile(random, fileName);
 		def res = monobitTest.test(fileName, 3.8415);
 		
 		println("Monobit : " + className + " is " + res['res']);
@@ -34,7 +34,7 @@ abstract class AbstractUnitTest {
 		def AbstractTest twobitTest = new TwobitTest();
 		def className = random.getMetaClass().getTheClass().getName();
 		def fileName = className+"_twobit_test.txt";
-		twobitTest.genBitSeq(random, fileName);
+		twobitTest.generateAndWriteToFile(random, fileName);
 		def res = twobitTest.test(fileName, 5.9);
 		
 		println("Twobit : " + className + " is " + res['res']);

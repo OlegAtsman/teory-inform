@@ -6,7 +6,7 @@ abstract class AbstractTest {
 	
 	def int BITS = 8;
 	
-	def genBitSeq(Random random, fname) {
+	def generateAndWriteToFile(Random random, fname) {
 		new File(fname).withOutputStream { os ->
 			for (i in 0..100000) {
 				BigInteger x = random.random();

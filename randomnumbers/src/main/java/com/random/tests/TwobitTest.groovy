@@ -1,12 +1,12 @@
 package com.random.tests
 
 class TwobitTest extends AbstractTest {
-		def readBitSeq(fname) {		def resMap = [
+		def analyzeFile(filename) {		def resMap = [
 			'n0' : 0,
 			'n00' : 0,			'n1' : 0,			'n11' : 0,
 			'n01' : 0,
 			'n10' : 0,			'sequenceLength' : 0		];
-				def prevBit=1;		new File(fname).eachByte(4) { buffer, nReads ->			def int x = new BigInteger(buffer);			resMap['sequenceLength'] += 4;			resMap['n1'] += countBits(x);	
+				def prevBit=1;		new File(filename).eachByte(4) { buffer, nReads ->			def int x = new BigInteger(buffer);			resMap['sequenceLength'] += 4;			resMap['n1'] += countBits(x);	
 			resMap['n11'] += countBits(x&((x<<1)|prevBit));
 			resMap['n01'] += countBits(~x&((x<<1)|prevBit));
 			resMap['n10'] += countBits(x&~((x<<1)|prevBit));
@@ -16,7 +16,7 @@ class TwobitTest extends AbstractTest {
 		resMap['n00'] = BITS*resMap['sequenceLength'] - 1 - resMap['n11'] - resMap['n01'] - resMap['n10'];				return resMap;	}
 	
 	def test(filename, alef) {
-		def resMap = readBitSeq(filename);
+		def resMap = analyzeFile(filename);
 
 		def x2 = 4*(Math.pow(resMap['n00'], 2) + Math.pow(resMap['n01'], 2) + 
 			Math.pow(resMap['n10'], 2) + Math.pow(resMap['n11'], 2))/(resMap['sequenceLength']-1) - 
@@ -29,5 +29,4 @@ class TwobitTest extends AbstractTest {
 		}
 		return resMap;
 	}
-
 }
