@@ -6,9 +6,11 @@ package com.random.randoms
  */
 class MM implements Random {
 
-	def long x=123456789, y=362436069,
-	z=77465321, c=13579;
-	def long t;
+	def long x=123456789, 
+			 y=362436069,
+			 z=77465321, 
+			 c=13579,
+			 t;
 	
 	def random() {
 		t=916905990L*x+c;

@@ -5,11 +5,15 @@ package com.random.randoms
  * @author Aleh_Atsman
  */
 class QCM implements Random {
-	int x = 0;
-	def m = 1 << 32 - 2;
+	def x = Integer.MAX_VALUE,
+		m = Integer.MAX_VALUE,
+		a = 16807,
+		c = 0,
+		d = 16807;
+		
 	
 	def random() {
-		x = (1664525*x*x + 1664525*x + 1013904223) % m;
-		return x;
+		x = (d*Math.pow(x, 2) + a*x + c) % m;
+		return Math.abs(x);
 	}
 }

@@ -4,11 +4,13 @@ package com.random.randoms
  * @author Aleh_Atsman
  */
 class LKM implements Random {
-	int x = 0;
-	def m = 1 << 32 - 2;
+	def x = Integer.MAX_VALUE,
+		m = Integer.MAX_VALUE,
+		a = 16807,
+		c = 0;		
 	
 	def random() {
-		x = Math.abs((int)((1664525*x + 1013904223) % m));
-		return x;
+		x = (a*x + c) % m;
+		return Math.abs(x);
 	}
 }

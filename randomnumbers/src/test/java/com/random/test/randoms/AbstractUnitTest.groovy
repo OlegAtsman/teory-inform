@@ -19,25 +19,32 @@ abstract class AbstractUnitTest {
 	@Test
 	def void monobitTest() {
 		def AbstractTest monobitTest = new MonobitTest();
-		monobitTest.genBitSeq(random, "monobit_test.txt");
-		def res = monobitTest.test("monobit_test.txt", 3.8415);
+		def className = random.getMetaClass().getTheClass().getName();
+		def fileName = className+"_monobit_test.txt";
+		monobitTest.genBitSeq(random, fileName);
+		def res = monobitTest.test(fileName, 3.8415);
 		
-		print("Monobit", res);
+		println("Monobit : " + className + " is " + res['res']);
+		println("x1=" + res['x1'] + " n0=" + res['n0'] + " n1=" + res['n1'] + "\n");
 		Assert.assertEquals(res['res'], "ok");
 	}
 	
+	@Test
 	def void twobitTest() {
 		def AbstractTest twobitTest = new TwobitTest();
-		twobitTest.genBitSeq(random, "twobit_test.txt");
+		def className = random.getMetaClass().getTheClass().getName();
+		def fileName = className+"_twobit_test.txt";
+		twobitTest.genBitSeq(random, fileName);
+		def res = twobitTest.test(fileName, 5.9);
 		
-		def res = twobitTest.test("twobit_test.txt", 3.8415);
+		println("Twobit : " + className + " is " + res['res']);
+		println("x2= " + res['x2']);
 		
-		
+		Assert.assertEquals(res['res'], "ok");
 	}
 	
 	def print(testName, res) {
-		println(testName + " is " + res['res']);
-		println("x1=" + res['x1'] + " n0=" + res['n0'] + " n1=" + res['n1'] + "\n");
+		
 	}
 	
 }
