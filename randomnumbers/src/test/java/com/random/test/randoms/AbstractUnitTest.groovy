@@ -7,6 +7,7 @@ import org.junit.Test
 import com.random.randoms.Random
 import com.random.tests.AbstractTest
 import com.random.tests.MonobitTest
+import com.random.tests.TwobitTest
 
 abstract class AbstractUnitTest {
 	
@@ -23,6 +24,15 @@ abstract class AbstractUnitTest {
 		
 		print("Monobit", res);
 		Assert.assertEquals(res['res'], "ok");
+	}
+	
+	def void twobitTest() {
+		def AbstractTest twobitTest = new TwobitTest();
+		twobitTest.genBitSeq(random, "twobit_test.txt");
+		
+		def res = twobitTest.test("twobit_test.txt", 3.8415);
+		
+		
 	}
 	
 	def print(testName, res) {
