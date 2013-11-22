@@ -21,7 +21,7 @@ class MonobitTest extends AbstractTest {
 	def test(fname, alef) {
 		def paramMap = analyzeFile(fname);
 		def n0 = BITS*paramMap['sequenceLength'] - paramMap['n1'];
-		def x1 = (n0 - paramMap['n1'])*(n0 - paramMap['n1'])/(8.0*paramMap['sequenceLength']);
+		def x1 = Math.pow((n0 - paramMap['n1']), 2)/(8.0*paramMap['sequenceLength']);
 		
 		def res = "ok";
 		if(x1 > alef) {
