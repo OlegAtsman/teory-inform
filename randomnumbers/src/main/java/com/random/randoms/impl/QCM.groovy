@@ -1,4 +1,6 @@
-package com.random.randoms
+package com.random.randoms.impl
+
+import com.random.randoms.Random
 
 /**
  * Квадратичный конгруэнтный метод 

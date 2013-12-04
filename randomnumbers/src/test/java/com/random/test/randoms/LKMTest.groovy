@@ -1,12 +1,8 @@
 package com.random.test.randoms
 
-import org.junit.Assert
-import org.junit.Before;
-import org.junit.Test
+import org.junit.Before
 
-import com.random.randoms.LKM
-import com.random.tests.AbstractTest
-import com.random.tests.MonobitTest
+import com.random.randoms.impl.LKM
 
 class LKMTest extends AbstractUnitTest {
 

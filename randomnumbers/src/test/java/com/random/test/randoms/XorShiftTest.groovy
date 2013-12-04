@@ -1,7 +1,8 @@
 package com.random.test.randoms
 
-import com.random.randoms.XorShift
-import org.junit.Before;
+import org.junit.Before
+
+import com.random.randoms.impl.XorShift
 
 class XorShiftTest extends AbstractUnitTest {
 

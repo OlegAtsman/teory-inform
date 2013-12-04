@@ -1,4 +1,5 @@
-package com.random.randoms
+package com.random.randoms.impl
+import com.random.randoms.Random
 /**
  * Линейный конгруэнтный метод
  * @author Aleh_Atsman

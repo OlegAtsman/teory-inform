@@ -1,12 +1,8 @@
 package com.random.test.randoms
 
-import org.junit.Assert
 import org.junit.Before
-import org.junit.Test
 
-import com.random.randoms.MM
-import com.random.tests.AbstractTest
-import com.random.tests.MonobitTest;
+import com.random.randoms.impl.MM
 
 class MMTest extends AbstractUnitTest {
 		
