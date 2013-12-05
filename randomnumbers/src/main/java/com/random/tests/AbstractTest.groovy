@@ -2,7 +2,7 @@ package com.random.tests
 
 import java.nio.ByteBuffer
 
-import com.random.randoms.Generator
+import com.random.randoms.generators.Generator;
 
 abstract class AbstractTest {
 	

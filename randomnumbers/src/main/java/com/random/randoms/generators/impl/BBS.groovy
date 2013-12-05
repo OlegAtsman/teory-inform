@@ -1,5 +1,5 @@
-package com.random.randoms.impl
-import com.random.randoms.Generator
+package com.random.randoms.generators.impl
+import com.random.randoms.generators.Generator;
 
 class BBS implements Generator {
 	

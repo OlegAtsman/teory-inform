@@ -1,4 +1,4 @@
-package com.random.randoms
+package com.random.randoms.service
 
 interface GeneratorService {
 		

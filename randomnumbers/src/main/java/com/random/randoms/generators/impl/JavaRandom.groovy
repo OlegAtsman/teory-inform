@@ -1,6 +1,6 @@
-package com.random.randoms.impl
+package com.random.randoms.generators.impl
 
-import com.random.randoms.Generator
+import com.random.randoms.generators.Generator;
 
 class JavaRandom implements Generator {
 

@@ -1,19 +1,19 @@
-package com.random.test.fileWorker
+package com.random.test.fileService
 
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
 import com.random.file.FileService
-import com.random.file.impl.FileWorker2
-import com.random.randoms.GeneratorService
-import com.random.randoms.impl.GeneratorServiceImpl
-import com.random.randoms.impl.LKM
+import com.random.file.impl.FileServiceImpl
+import com.random.randoms.generators.impl.LKM;
+import com.random.randoms.service.GeneratorService;
+import com.random.randoms.service.impl.GeneratorServiceImpl;
 
-class FileWorkerTest {
+class FileServiceTest {
 	
 	def static String FILE_NAME = "file_worker_test.txt";
-	def FileService fileService = new FileWorker2();
+	def FileService fileService = new FileServiceImpl();
 	def GeneratorService generatorService;
 	
 	@Before

@@ -1,7 +1,7 @@
 package com.random.test.randoms
 
-import com.random.randoms.impl.GeneratorServiceImpl
-import com.random.randoms.impl.JavaRandom;
+import com.random.randoms.generators.impl.JavaRandom;
+import com.random.randoms.service.impl.GeneratorServiceImpl;
 
 class JavaRandomTest extends AbstractUnitTest {
 

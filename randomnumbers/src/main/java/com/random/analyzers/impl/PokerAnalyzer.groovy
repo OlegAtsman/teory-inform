@@ -1,23 +1,23 @@
 package com.random.analyzers.impl
 
-import com.random.analyzers.AbstractAnalyzer
+import com.random.analyzers.Analyzer
 
-class PokerAnalyzer extends AbstractAnalyzer {
+class PokerAnalyzer extends Analyzer {
 
 	def blockLen = 4,
 		blockNum = 1<<blockLen,
 		blockMask = blockNum - 1,
-		blockCounter = new int[blockNum]
+		blockCounter = new int[blockNum] // Число различных битовых блоков
 	
 	def analyze(ints) {
 		def	sequenceLength = 0
 		
 		for(int x : ints) {
 			sequenceLength += 4;
-			blockCounter[x & blockMask]++
 			
-			for(int i = 0; i < 8/blockLen; i++) {
-				x = x >> blockLen
+			for(int i = 0; i < BITS/blockLen; i++) {
+				blockCounter[x & blockMask]++ // Изменяем счетчик очередного блока
+				x = x >> blockLen // Переходим к следующему блоку
 			}
 		}
 	

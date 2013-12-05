@@ -1,7 +1,7 @@
 package com.random.test.randoms
 
-import com.random.randoms.impl.BBS
-import com.random.randoms.impl.GeneratorServiceImpl
+import com.random.randoms.generators.impl.BBS;
+import com.random.randoms.service.impl.GeneratorServiceImpl;
 
 class BBSTest extends AbstractUnitTest {
 

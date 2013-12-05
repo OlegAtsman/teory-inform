@@ -1,4 +1,4 @@
-package com.random.randoms
+package com.random.randoms.generators
 
 interface Generator {
 	

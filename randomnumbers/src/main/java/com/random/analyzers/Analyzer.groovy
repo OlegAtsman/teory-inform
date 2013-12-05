@@ -1,6 +1,8 @@
 package com.random.analyzers
 
-abstract class AbstractAnalyzer {
+abstract class Analyzer {
+	
+	def BITS = 8
 	
 	def countBits(x) {
 		x = x - ((x >> 1) & 0x55555555)

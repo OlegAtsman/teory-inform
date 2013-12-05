@@ -1,8 +1,8 @@
 package com.random.analyzers.impl
 
-import com.random.analyzers.AbstractAnalyzer
+import com.random.analyzers.Analyzer
 
-class MonobitAnalyzer extends AbstractAnalyzer {
+class MonobitAnalyzer extends Analyzer {
 		
 	def analyze(ints) {
 		def n0 = 0, 

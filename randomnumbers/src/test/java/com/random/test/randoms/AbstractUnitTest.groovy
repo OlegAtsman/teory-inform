@@ -4,22 +4,19 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
-import com.random.analyzers.AbstractAnalyzer
-import com.random.analyzers.impl.MonobitAnalyzer
 import com.random.analyzers.impl.PokerAnalyzer
-import com.random.analyzers.impl.TwobitAnalyzer
+import com.random.factorys.AbstractTestsFactory
+import com.random.factorys.impl.MonobitFactory
+import com.random.factorys.impl.PokerFactory
+import com.random.factorys.impl.TwobitFactory
 import com.random.file.FileService
-import com.random.file.impl.FileWorker2
-import com.random.randoms.GeneratorService
-import com.random.tests.AbstractTest
-import com.random.tests.impl.MonobitTest
-import com.random.tests.impl.PokerTest
-import com.random.tests.impl.TwobitTest
+import com.random.file.impl.FileServiceImpl
+import com.random.randoms.service.GeneratorService;
 
 abstract class AbstractUnitTest {
 	
 	def GeneratorService generatorService;
-	def FileService fs = new FileWorker2();
+	def FileService fs = new FileServiceImpl();
 	
 	@Before
 	def void before() {
@@ -29,21 +26,21 @@ abstract class AbstractUnitTest {
 	
 	@Test
 	def void monobitTest() {
-		def res = test(new MonobitTest(), new MonobitAnalyzer(), 3.8415);
-		println("X=" + res['x'] + " n0=" + res['n0'] + " n1=" + res['n1'] + "\n");
+		def res = test(new MonobitFactory(), 3.8415);
+		println("X=" + res['x'] + " n0=" + res['n0'] + " n1=" + res['n1']);
 		Assert.assertEquals(true, res['result']);
 	}
 	
 	@Test
 	def void twobitTest() {
-		def res = test(new TwobitTest(), new TwobitAnalyzer(), 5.9);
-		println("X= " + res['x'] + " n0=" + res['n0'] + " n1=" + res['n1']);
+		def res = test(new TwobitFactory(), 5.9);
+		println('X= ' + res['x'] + ' n0=' + res['n0'] + " n1=" + res['n1'] + ' n00=' + res['n00']);
 		Assert.assertEquals(true, res['result']);
 	}
 	
 	@Test
 	def void pokerTest() {
-		def res = test(new PokerTest(), new PokerAnalyzer(), 30.6)
+		def res = test(new PokerFactory(), 30.6)
 		println("X= " + res['x']);
 		Assert.assertEquals(true, res['result']);
 	}
@@ -56,15 +53,18 @@ abstract class AbstractUnitTest {
 		fs.writeInts(fileName, generatorService.generate(n));
 	}
 	
-	def test(AbstractTest test, AbstractAnalyzer analyzer, coefficient) {
-		def className = generatorService.getGenerator().getMetaClass().getTheClass().getName();
-		def testName = test.getMetaClass().getTheClass().getName();
-		def fileName = className + '.txt';
+	def test(testFactory, coefficient) {
+		def test = testFactory.makeTest()
+		def analyzer = testFactory.makeAnalyzer()
 		
-		def analyticMap = analyzer.analyze(fs.readInts(fileName));
-		def res = test.test(analyticMap, coefficient);
+		def className = generatorService.getGenerator().getMetaClass().getTheClass().getName()
+		def testName = test.getMetaClass().getTheClass().getName()
+		def fileName = className + '.txt'
 		
-		println(testName + " : " + className + " is " + res['result']);
+		def analyticMap = analyzer.analyze(fs.readInts(fileName))
+		def res = test.test(analyticMap, coefficient)
+		
+		println(testName + " : " + className + " is " + res['result'])
 		res
 	}
 	

@@ -3,9 +3,9 @@ package com.random.file.impl
 import java.nio.ByteBuffer
 
 import com.random.file.FileService;
-import com.random.randoms.Generator
+import com.random.randoms.generators.Generator;
 
-class FileWorker2 implements FileService {
+class FileServiceImpl implements FileService {
 	
 	def writeInts(filename, ints) {
 		new File(filename).withOutputStream { os ->

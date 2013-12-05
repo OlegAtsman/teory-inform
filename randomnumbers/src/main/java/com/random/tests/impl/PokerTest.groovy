@@ -20,7 +20,7 @@ class PokerTest extends AbstractTest {
 		
 		x = x * blockNum * blockLen / sequenceLength - sequenceLength / blockLen;
 		
-		['result':analyticMap['x'] < coefficient, 'x':x];
+		['result':x < coefficient, 'x':x];
 	}
 
 }
