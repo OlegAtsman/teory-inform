@@ -1,7 +1,7 @@
 package com.random.tests.impl
 
-import com.random.analyzers.AbstractFileAnalyzer
-import com.random.tests.AbstractTest;
+import com.random.tests.AbstractTest
+
 
 class TwobitTest extends AbstractTest {
 	
@@ -19,9 +19,18 @@ class TwobitTest extends AbstractTest {
 		def m2 = 2/L;
 		def squaresSum2 = pow(n0) + pow(n1);
 		
-		def x2 = m1 * squaresSum1 - m2 * squaresSum2 + 1;
+		def x = m1 * squaresSum1 - m2 * squaresSum2 + 1;
 		
-		['result' : x2<coefficient, 'x2' : x2, 'coefficient':coefficient];
+		[
+			'result' : x<coefficient, 
+			'x' : x,
+			'n0' : n0,
+			'n1' : n1,
+			'n00' : n00,
+			'n01' : n01,
+			'n10' : n10,
+			'n11' : n11
+		];
 	}
 	
 	def pow(x) {

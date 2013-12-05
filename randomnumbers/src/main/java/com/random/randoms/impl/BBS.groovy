@@ -1,14 +1,14 @@
 package com.random.randoms.impl
-import com.random.randoms.Random
+import com.random.randoms.Generator
 
-class BBS implements Random {
+class BBS implements Generator {
 	
 	def x=9,
 		m=209;
 		
-	def random() {
+	def generate() {
 		x = Math.pow(x, 2)%m;
-		return x;
+		return Math.abs(x);
 	}
 	
 }
