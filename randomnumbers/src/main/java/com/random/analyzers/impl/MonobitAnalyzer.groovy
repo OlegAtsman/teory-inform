@@ -10,11 +10,11 @@ class MonobitAnalyzer extends Analyzer {
 			sequenceLength = 0
 		
 		for(int i : ints) {
-			sequenceLength += 4
+			sequenceLength += SEQ_SL
 			n1 += countBits(i)
 		}
 		
-		n0 = sequenceLength * 8 - n1;
+		n0 = sequenceLength * BITS - n1;
 		
 		[	
 			'n0':n0, 

@@ -2,7 +2,9 @@ package com.random.analyzers
 
 abstract class Analyzer {
 	
-	def BITS = 8
+	def BITS = 32
+	
+	def SEQ_SL = 1
 	
 	def countBits(x) {
 		x = x - ((x >> 1) & 0x55555555)

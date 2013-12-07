@@ -14,11 +14,11 @@ class PokerTest extends AbstractTest {
 			x = 0
 			
 		
-		for(int i = 0; i < blockLen; i++) {
+		for(int i = 0; i < blockNum; i++) {
 			x += Math.pow(blockCounter[i], 2);
 		}
 		
-		x = x * blockNum * blockLen / sequenceLength - sequenceLength / blockLen;
+		x = x * blockNum * blockLen / (BITS*sequenceLength) - BITS*sequenceLength / blockLen;
 		
 		['result':x < coefficient, 'x':x];
 	}

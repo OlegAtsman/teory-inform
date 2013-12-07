@@ -1,8 +1,9 @@
-package com.random.randoms.generators.impl
+package com.random.randoms
 
-import com.random.randoms.generators.Generator;
-
-class MM implements Generator {
+/**
+ * Marsaglia-Multicarry
+ */
+class MM implements Random {
 
 	def long x=123456789, 
 			 y=362436069,
@@ -10,13 +11,13 @@ class MM implements Generator {
 			 c=13579,
 			 t;
 	
-	def generate() {
+	def random() {
 		t=916905990L*x+c;
 		x=y; y=z;
 		c=(t>>32);
 		z=(t&0xffffffff);
 		z = (z>0)?z:(-1)*z
 		
-		return Math.abs(z); 
+		return  z as long; 
 	}
 }

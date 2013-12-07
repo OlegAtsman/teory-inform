@@ -15,15 +15,16 @@ class TwobitAnalyzer extends Analyzer {
 		
 		def prevBit=0
 		for(int x : ints) {
-			sequenceLength += 4
+			sequenceLength += SEQ_SL
 			n1 += countBits(x)
 			n11 += countBits(x&((x<<1)|prevBit))
 			n01 += countBits(~x&((x<<1)|prevBit))
 			n10 += countBits(x&~((x<<1)|prevBit))
-			prevBit = x >> (8 - 1)
+			prevBit = x >> (BITS - 1)
 		}
 		
-		n0 = sequenceLength * 8 - n1;
+		n0 = sequenceLength * BITS - n1
+		n00 = BITS * sequenceLength - 1 - n11 - n01 - n10
 		
 		[	
 			'n0' : n0,

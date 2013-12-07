@@ -27,21 +27,21 @@ abstract class AbstractUnitTest {
 	@Test
 	def void monobitTest() {
 		def res = test(new MonobitFactory(), 3.8415);
-		println("X=" + res['x'] + " n0=" + res['n0'] + " n1=" + res['n1']);
+		println(res)
 		Assert.assertEquals(true, res['result']);
 	}
 	
 	@Test
 	def void twobitTest() {
-		def res = test(new TwobitFactory(), 5.9);
-		println('X= ' + res['x'] + ' n0=' + res['n0'] + " n1=" + res['n1'] + ' n00=' + res['n00']);
-		Assert.assertEquals(true, res['result']);
+		def res = test(new TwobitFactory(), 5.9)		
+		println(res)
+		Assert.assertEquals(true, res['result'])
 	}
 	
 	@Test
 	def void pokerTest() {
 		def res = test(new PokerFactory(), 30.6)
-		println("X= " + res['x']);
+		println(res)
 		Assert.assertEquals(true, res['result']);
 	}
 	
