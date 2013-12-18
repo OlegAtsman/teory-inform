@@ -1,8 +1,6 @@
-package com.random.randoms.generators.impl
+package com.random.randoms
 
-import com.random.randoms.generators.Generator;
-
-class QCM implements Generator {
+class QCM implements Random {
 	def x = Integer.MAX_VALUE,
 		m = Integer.MAX_VALUE,
 		a = 16807,
@@ -10,7 +8,7 @@ class QCM implements Generator {
 		d = 16807;
 		
 	
-	def generate() {
+	def random() {
 		x = (d*Math.pow(x, 2) + a*x + c) % m;
 		return Math.abs(x);
 	}

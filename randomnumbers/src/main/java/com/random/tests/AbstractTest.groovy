@@ -6,7 +6,7 @@ import com.random.randoms.generators.Generator;
 
 abstract class AbstractTest {
 	
-	def int BITS = 8;
+	def int BITS = 32;
 	
 	abstract test(analyticMap, coefficient);
 	

@@ -18,7 +18,7 @@ class AnalyzerTest {
 	def Analyzer analyzer
 	def FileService fs;
 	def GeneratorService generator;
-	def n = 100000;
+	def n = 100000
 	
 	@Before
 	void before() {
@@ -32,7 +32,7 @@ class AnalyzerTest {
 	@Test
 	void sequenceLengthTest() {
 		def res = analyzer.analyze(fs.readInts("analyzer_test.txt"))
-		Assert.assertEquals(n*4, res['sequenceLength'])
+		Assert.assertEquals(n, res['sequenceLength'])
 	}
 	
 	@Test
