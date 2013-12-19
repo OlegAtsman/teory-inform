@@ -1,4 +1,4 @@
-package by.grsu.esystem.encryptor.generator
+package by.grsu.esystem.generators
 
 interface Generator {
 	

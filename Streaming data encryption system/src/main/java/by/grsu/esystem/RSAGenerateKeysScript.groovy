@@ -1,9 +1,5 @@
 package by.grsu.esystem
 
-import by.grsu.esystem.rsa.file.PEMFile
-import java.security.Key
-import java.security.KeyPair
-import java.security.KeyPairGenerator
 
 /*def KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA")
 def KeyPair kp = kpg.generateKeyPair()

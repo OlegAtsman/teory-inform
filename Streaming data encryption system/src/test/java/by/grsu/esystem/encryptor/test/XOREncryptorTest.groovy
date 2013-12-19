@@ -1,16 +1,15 @@
 package by.grsu.esystem.encryptor.test
 
-import org.junit.Assert;
+import by.grsu.esystem.encryptors.XOREncryptor
+import org.junit.Assert
 import org.junit.Test
 
-import by.grsu.esystem.encryptor.Encryptor
-
-class EncryptorTest {
+class XOREncryptorTest {
 	
 	@Test
 	void test() {
 		
-		Encryptor encryptor = new Encryptor()
+		XOREncryptor encryptor = new XOREncryptor()
 		
 		def message = "HELLO WORLD ENCRYPTOR"
 		

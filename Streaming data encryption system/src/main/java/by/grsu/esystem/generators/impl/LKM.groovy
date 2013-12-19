@@ -1,6 +1,7 @@
-package by.grsu.esystem.encryptor.generator.impl
+package by.grsu.esystem.generators.impl
 
-import by.grsu.esystem.encryptor.generator.Generator
+import by.grsu.esystem.generators.Generator
+
 
 
 class LKM implements Generator {

@@ -1,12 +1,11 @@
-package by.grsu.esystem.rsa.encryptor.impl
+package by.grsu.esystem.encryptors
 
-import by.grsu.esystem.rsa.encryptor.IEncryptor
 import java.security.PrivateKey
 import java.security.PublicKey
 
 import javax.crypto.Cipher
 
-class RSAEncryptor implements IEncryptor {
+class RSAEncryptor {
 	
 	def static ALGORITHM = "RSA"
 	

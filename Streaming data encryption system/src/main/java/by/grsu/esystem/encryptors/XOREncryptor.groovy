@@ -1,10 +1,9 @@
-package by.grsu.esystem.encryptor
+package by.grsu.esystem.encryptors
 
-import by.grsu.esystem.encryptor.generator.Generator
-import by.grsu.esystem.encryptor.generator.impl.LKM;
+import by.grsu.esystem.generators.impl.LKM
 import java.nio.ByteBuffer
 
-class Encryptor {
+class XOREncryptor {
 	
 	def generator = new LKM();
 	
@@ -30,9 +29,9 @@ class Encryptor {
 	}
 	
 	def intToByteArray(Integer x) {
-		ByteBuffer b = ByteBuffer.allocate(4);
-		b.putInt(x);
-		b.array();
+		ByteBuffer b = ByteBuffer.allocate(4)
+		b.putInt(x)
+		b.array()
 	}
 	
 }

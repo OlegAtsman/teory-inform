@@ -10,12 +10,10 @@ import org.junit.Before
 import org.junit.Test
 
 import by.grsu.esystem.file.PEMFile
-import by.grsu.esystem.file.PEMFileWorker
-import by.grsu.esystem.rsa.IEncryptor
 
 abstract class EncryptorTest {
 	
-	def IEncryptor encryptor;
+	def encryptor;
 	def KeyFactory keyFactory = KeyFactory.getInstance("RSA");
 	
 	@Before
@@ -65,5 +63,5 @@ abstract class EncryptorTest {
 		Assert.assertEquals(message, decryptMessage)
 	}
 	
-	abstract IEncryptor getEncryptor();
+	abstract getEncryptor();
 }

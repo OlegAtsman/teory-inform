@@ -1,11 +1,11 @@
 package by.grsu.esystem.rsa.test
 
-import by.grsu.esystem.rsa.IEncryptor;
-import by.grsu.esystem.rsa.impl.RSAEncryptor
+import by.grsu.esystem.encryptors.RSAEncryptor
+
 
 class RSAEncryptorTest extends EncryptorTest {
 	
-	def IEncryptor getEncryptor() {
+	def getEncryptor() {
 		return new RSAEncryptor();
 	}
 	
