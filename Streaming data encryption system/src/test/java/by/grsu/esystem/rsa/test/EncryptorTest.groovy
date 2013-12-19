@@ -13,6 +13,9 @@ import by.grsu.esystem.file.PEMFile
 
 abstract class EncryptorTest {
 	
+	def PUBLIC_KEY_FILE = "public_key_file.pem"
+	def PRIVATE_KEY_FILE = "private_key_file.pem"
+	
 	def encryptor;
 	def KeyFactory keyFactory = KeyFactory.getInstance("RSA");
 	
@@ -44,18 +47,18 @@ abstract class EncryptorTest {
 		Key privateKey = kp.getPrivate()
 		
 		
-		new PEMFile("publicKey.pem").withWriter { pemWriter ->
+		new PEMFile(PUBLIC_KEY_FILE).withWriter { pemWriter ->
 			pemWriter.writeObject(publicKey)
 		}
 		
-		new PEMFile("privateKey.pem").withWriter { pemWriter ->
+		new PEMFile(PRIVATE_KEY_FILE).withWriter { pemWriter ->
 			pemWriter.writeObject(privateKey)
 		}
 	
 		def message = "HELLO WORLD RSA!!!";
 		def ciphertext = getEncryptor().encrypt(message, publicKey)
 		
-		def KeyPair privateKeyFromFile = new PEMFile("privateKey.pem").withReader { pemReader ->
+		def KeyPair privateKeyFromFile = new PEMFile(PRIVATE_KEY_FILE).withReader { pemReader ->
 			pemReader.readObject()
 		}
 		
