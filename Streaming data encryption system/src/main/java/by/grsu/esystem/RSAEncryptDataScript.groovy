@@ -1,8 +1,9 @@
 package by.grsu.esystem
 
-import by.grsu.esystem.file.PEMFile
-import by.grsu.esystem.rsa.impl.RSAEncryptor
 import java.security.KeyPair
+
+import by.grsu.esystem.rsa.encryptor.impl.RSAEncryptor
+import by.grsu.esystem.rsa.file.PEMFile
 
 def PUBLIC_KEY_FILE = "public_key_file.pem"
 def PRIVATE_KEY_FILE = "private_key_file.pem"

@@ -1,4 +1,4 @@
-package by.grsu.esystem.rsa
+package by.grsu.esystem.rsa.encryptor
 
 import java.security.PrivateKey;
 import java.security.PublicKey;

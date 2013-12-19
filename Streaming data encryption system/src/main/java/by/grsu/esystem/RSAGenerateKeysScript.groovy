@@ -1,14 +1,11 @@
 package by.grsu.esystem
 
-import by.grsu.esystem.file.PEMFile
+import by.grsu.esystem.rsa.file.PEMFile
 import java.security.Key
 import java.security.KeyPair
 import java.security.KeyPairGenerator
 
-import org.bouncycastle.openssl.PEMWriter
-import org.bouncycastle.util.io.pem.PemWriter
-
-def KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA")
+/*def KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA")
 def KeyPair kp = kpg.generateKeyPair()
 def Key publicKey = kp.getPublic()
 def Key privateKey = kp.getPrivate()
@@ -22,5 +19,7 @@ new PEMFile(PUBLIC_KEY_FILE).withWriter { writer ->
 
 new PEMFile(PRIVATE_KEY_FILE).withWriter { writer ->
 	writer.writeObject(privateKey)
-}
+}*/
 
+def a = 0..3
+println a.size()

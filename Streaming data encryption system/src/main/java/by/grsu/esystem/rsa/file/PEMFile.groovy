@@ -1,4 +1,4 @@
-package by.grsu.esystem.file
+package by.grsu.esystem.rsa.file
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider
 import org.bouncycastle.openssl.PEMReader

@@ -1,0 +1,32 @@
+package by.grsu.esystem.encryptor.generator.impl
+
+import by.grsu.esystem.encryptor.generator.Generator
+
+
+class LKM implements Generator {
+	def x = 1,
+		m = Integer.MAX_VALUE,
+		a = 16807,
+		c = 0
+	
+	def LKM() {
+		
+	}
+		
+	def LKM(x, m, a, c) {
+		this.x = x
+		this.m = m
+		this.a = a
+		this.c = c
+	}
+		
+	def generate() {
+		x = (a*x + c) % m;
+		return Math.abs(x);
+	}
+	
+	def generate(x, m, a, c) {
+		x = (a*x + c) % m;
+		return Math.abs(x);
+	}
+}
