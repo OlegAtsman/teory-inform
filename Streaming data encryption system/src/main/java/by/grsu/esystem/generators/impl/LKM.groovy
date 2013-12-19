@@ -2,8 +2,6 @@ package by.grsu.esystem.generators.impl
 
 import by.grsu.esystem.generators.Generator
 
-
-
 class LKM implements Generator {
 	def x = 1,
 		m = Integer.MAX_VALUE,
