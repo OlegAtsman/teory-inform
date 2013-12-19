@@ -5,14 +5,12 @@ import java.nio.ByteBuffer
 
 class XOREncryptor {
 	
-	def generator = new LKM();
-	
-	def encrypt(String message, Integer randomSequence) {
+	def encrypt(message, randomSequence) {
 		def messageBytes = message.getBytes()
 		xor(messageBytes, intToByteArray(randomSequence))
 	}
 	
-	def String decrypt(ciphertext, Integer randomSequence) {		
+	def String decrypt(ciphertext, randomSequence) {		
 		def encryptBytes = xor(ciphertext, intToByteArray(randomSequence))
 		new String(encryptBytes as byte[])
 	}
@@ -28,7 +26,7 @@ class XOREncryptor {
 		xoredElements
 	}
 	
-	def intToByteArray(Integer x) {
+	def intToByteArray(x) {
 		ByteBuffer b = ByteBuffer.allocate(4)
 		b.putInt(x)
 		b.array()
