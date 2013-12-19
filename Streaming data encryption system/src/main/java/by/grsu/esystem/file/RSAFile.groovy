@@ -15,17 +15,13 @@ class RSAFile {
 		this.filename = filename
 	}
 	
-	def read(PrivateKey privateKey) {
-		
+	def String read(PrivateKey privateKey) {
 		byte[] lkmBytes = new File(filename).readBytes()
-		
 		def lkmString = rsaEncryptor.decrypt(lkmBytes, privateKey)
-		
 		lkmString
-			
 	}
 	
-	def write(String message, PublicKey publicKey) {
+	def void write(String message, PublicKey publicKey) {
 		def byte[] encryptedMessage = rsaEncryptor.encrypt(message, publicKey)
 		new File(filename).withOutputStream { os ->
 			os.write(encryptedMessage)

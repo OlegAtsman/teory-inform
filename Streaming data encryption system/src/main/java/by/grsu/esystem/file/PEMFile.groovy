@@ -12,9 +12,9 @@ class PEMFile {
 		Security.addProvider(new BouncyCastleProvider());
 	}
 	
-	def filename;
+	def String filename;
 	
-	PEMFile(filename) {
+	PEMFile(String filename) {
 		this.filename = filename
 	}
 	

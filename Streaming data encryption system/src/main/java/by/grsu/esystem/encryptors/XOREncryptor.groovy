@@ -5,17 +5,17 @@ import java.nio.ByteBuffer
 
 class XOREncryptor {
 	
-	def encrypt(message, randomSequence) {
+	def byte[] encrypt(String message, Integer randomSequence) {
 		def messageBytes = message.getBytes()
 		xor(messageBytes, intToByteArray(randomSequence))
 	}
 	
-	def String decrypt(ciphertext, randomSequence) {		
+	def String decrypt(byte[] ciphertext, Integer randomSequence) {		
 		def encryptBytes = xor(ciphertext, intToByteArray(randomSequence))
 		new String(encryptBytes as byte[])
 	}
 	
-	def xor (message, gamma) {
+	def byte[] xor (byte[] message, byte[] gamma) {
 		def xoredElements = []
 		def gammaNumber = 0
 		message.each { e -> 
@@ -23,10 +23,10 @@ class XOREncryptor {
 			xoredElements.add(encryptedByte)
 			if(gammaNumber == 3) {gammaNumber = 0} else {gammaNumber += 1}
 		}
-		xoredElements
+		xoredElements.toArray() as byte[]
 	}
 	
-	def intToByteArray(x) {
+	def byte[] intToByteArray(x) {
 		ByteBuffer b = ByteBuffer.allocate(4)
 		b.putInt(x)
 		b.array()
